@@ -1,6 +1,6 @@
 {
   "name": "vue-flatpickr",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "A Vue component that wraps the Flatpickr",
   "main": "index.js",
   "scripts": {

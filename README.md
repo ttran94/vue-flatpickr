@@ -1,11 +1,11 @@
-# vue-flatpickr
+# vue-flatpickr (for VueJS 1.0)
 A Vue component that wraps the [Flatpickr](https://github.com/chmln/flatpickr).
 
 Demo: [https://jrainlau.github.io/vue-flatpickr/](https://jrainlau.github.io/vue-flatpickr/)
 
 ## Install
 ```
-npm install vue-flatpickr
+npm install vue-flatpickr@1.0.0
 ```
 
 ## Usage
