@@ -20,14 +20,6 @@ export default {
     	}
     }
   },
-  watch: {
-    'options': {
-      handler (val, oldVal) {
-        new Flatpickr(this.$el, this.options)
-      },
-      deep: true
-    }
-  },
 	methods: {
 		inputting (e) {
 			this.$emit('update', e.target.value)
