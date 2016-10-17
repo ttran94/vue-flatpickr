@@ -1,7 +1,9 @@
-# vue-flatpickr
+# vue-flatpickr (for VueJS 2.0)
 A Vue component that wraps the [Flatpickr](https://github.com/chmln/flatpickr).
 
 Demo: [https://jrainlau.github.io/vue-flatpickr/](https://jrainlau.github.io/vue-flatpickr/)
+
+> Check out the `master` branch to view the `vue-flatpickr` for VueJS 1.0
 
 ## Install
 ```
@@ -10,59 +12,71 @@ npm install vue-flatpickr
 
 ## Usage
 Enter one of your `.vue` file, load the instance `VueFlatpickr-en.vue` (or `VueFlatpickr-zh` for Chinese),  and the stylesheet `flatpickr.min.css`.
-> Note that you have set the correct path, for example you might set the path as `../node_modules/vue-flatpickr/VueFlatpickr-en.vue` and so on.
+> Note that you have set the path correctly. For example, you might set the path as `../node_modules/vue-flatpickr/vue-flatpickr-default.vue` and so on.
 
 ```
 <template>
-  <vue-flatpickr></vue-flatpickr>
+  <Flatpickr />
 </template>
 
 <script>
-import VueFlatpickr from './VueFlatpickr-en'
+import Flatpickr from './vue-flatpickr-default.vue'
 
 export default {
   components: {
-    VueFlatpickr
+    Flatpickr
   }
 }
 </script>
-
-<style>
-@import './assets/flatpickr.min.css';
-</style>
 ```
 
 ## Options
-Use `props` to pass the **options object** to `vue-flatpickr`. The options are same to the [official document](https://chmln.github.io/flatpickr/#options). Here is an example below:
+Use `props` to pass the **options object** to `vue-flatpickr`. The options are same to the [official document](https://chmln.github.io/flatpickr/#options). And you could pass a default message to the instance by the props **message**. Here is an example below:
 ```
 <!-- template -->
-<vue-flatpickr :options="fpOptions"></vue-flatpickr>
+<Flatpickr :message='msg' :options='options' />
 
 <!-- script -->
-data() {
+data () {
     return {
-      fpOptions: {
-        enableTime: true
+      msg: 'Click here to pick a date.',
+      options: {
+        allowInput: true
       }
     }
   }
 ```
 
 ## Data binding
-The  `<vue-flatpick></vue-flatpickr>` tag could be use as a normal `<input>` tag, which you can use `v-model` to bind data withVue model:
+The  `<Flatpickr />` tag could be use as a normal `<input>` tag, your root component could use `v-on:update='your_methods'` to receive the data comes from `<Flatpickr />`.
 ```
-<vue-flatpickr v-model='date'></vue-flatpickr>
+<!-- template -->
+<Flatpickr @update='update'/>
+
+<!-- script -->
+data () {
+    return {
+      msg: 'Click here to pick a date.'
+    }
+  },
+methods: {
+    update (val) {
+      this.msg = val
+    }
+  }
 ```
 
 ## Themes
 `vue-flatpickr` supports all the offical themes, all you need to do is to pick up the one you like:
-- `flatpickr.min.css`
-- `flatpickr.confetti.min.css`
-- `flatpickr.dark.min.css`
-- `flatpickr.material_blue.min.css`
-- `flatpickr.material_green.min.css`
-- `flatpickr.material_orange.min.css`
-- `flatpickr.material_red.min.css`
+- `vue-flatpickr-default.vue`
+- `vue-flatpickr-airbnb.vue`
+- `vue-flatpickr-base16.vue`
+- `vue-flatpickr-confetti.vue`
+- `vue-flatpickr-dark.vue`
+- `vue-flatpickr-material_blue.vue`
+- `vue-flatpickr-material_green.vue`
+- `vue-flatpickr-material_orange.vue`
+- `vue-flatpickr-material_red.vue`
 
 ## Lisense
 MIT
