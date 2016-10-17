@@ -1,6 +1,6 @@
 {
   "name": "vue-flatpickr",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A Vue component that wraps the Flatpickr",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
