@@ -32,5 +32,5 @@ export default {
 </script>
 
 <style scoped>
-  @import url('./assets/flatpickr.materail_red.min.css');
+  @import url('./assets/flatpickr.material_red.min.css');
 </style>
