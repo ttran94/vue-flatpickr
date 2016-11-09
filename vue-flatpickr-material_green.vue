@@ -6,27 +6,33 @@
 import Flatpickr from './assets/flatpickr'
 
 export default {
-	props: {
+  data() {
+    return {
+      fp: null
+    }
+  },
+  props: {
     options: {
       type: Object,
       default: () => {
-      	return {}
+        return {}
       }
     },
     message: {
-    	type: String,
-    	default: () => {
-    		return ''
-    	}
+      type: String,
+      default: () => ''
     }
   },
-	methods: {
-		inputting (e) {
-			this.$emit('update', e.target.value)
-		}
-	},
+  methods: {
+    inputting (e) {
+      this.$emit('update', e.target.value)
+    }
+  },
   mounted () {
-    new Flatpickr(this.$el, this.options)
+    this.fp = new Flatpickr(this.$el, this.options)
+  },
+  destroyed() {
+    this.fp.destroy()
   }
 }
 </script>

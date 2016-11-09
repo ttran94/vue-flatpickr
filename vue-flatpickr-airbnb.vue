@@ -6,6 +6,11 @@
 import Flatpickr from './assets/flatpickr'
 
 export default {
+  data() {
+    return {
+      fp: null
+    }
+  },
 	props: {
     options: {
       type: Object,
@@ -15,9 +20,7 @@ export default {
     },
     message: {
     	type: String,
-    	default: () => {
-    		return ''
-    	}
+    	default: () => ''
     }
   },
 	methods: {
@@ -26,7 +29,10 @@ export default {
 		}
 	},
   mounted () {
-    new Flatpickr(this.$el, this.options)
+    this.fp = new Flatpickr(this.$el, this.options)
+  },
+  destroyed() {
+    this.fp.destroy()
   }
 }
 </script>
