@@ -6,7 +6,7 @@
 import Flatpickr from './assets/flatpickr'
 
 export default {
-  data() {
+  data () {
     return {
       fp: null
     }
@@ -24,22 +24,23 @@ export default {
     }
   },
   watch: {
-    options(opt) {
+    options (opt) {
       for (let o in opt) {
-        this.fp.set(o, opt[o]);
+        this.fp.set(o, opt[o])
       }
     }
   },
   methods: {
-    inputting(e) {
-      this.$emit('update', e.target.value);
+    inputting (e) {
+      this.$emit('update', e.target.value)
     }
   },
-  mounted() {
-    this.fp = new Flatpickr(this.$el, this.options);
+  mounted () {
+    this.fp = new Flatpickr(this.$el, this.options)
+    this.$emit('FlatpickrRef', this.fp)
   },
-  destroyed() {
-    this.fp.destroy();
+  destroyed () {
+    this.fp.destroy()
   }
 }
 </script>
