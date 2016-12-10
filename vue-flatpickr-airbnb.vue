@@ -1,43 +1,8 @@
-<template>
-	<input type="text" :value='message' @change='inputting' @input='inputting'>
-</template>
-
 <script>
-import Flatpickr from './assets/flatpickr'
-
-export default {
-  data() {
-    return {
-      fp: null
-    }
-  },
-	props: {
-    options: {
-      type: Object,
-      default: () => {
-      	return {}
-      }
-    },
-    message: {
-    	type: String,
-    	default: () => ''
-    }
-  },
-	methods: {
-		inputting (e) {
-			this.$emit('update', e.target.value)
-		}
-	},
-  mounted () {
-    this.fp = new Flatpickr(this.$el, this.options)
-    this.$emit('FlatpickrRef', this.fp);
-  },
-  destroyed() {
-    this.fp.destroy()
-  }
-}
+import baseFP from './vue-flatpickr-base'
+export default baseFP;
 </script>
 
 <style scoped>
-  @import url('./assets/flatpickr.airbnb.min.css');
+@import url('./assets/flatpickr.airbnb.min.css');
 </style>
