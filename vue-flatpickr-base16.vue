@@ -30,6 +30,7 @@ export default {
   },
   mounted () {
     this.fp = new Flatpickr(this.$el, this.options)
+    this.$emit('FlatpickrRef', this.fp)
   },
   destroyed() {
     this.fp.destroy()
