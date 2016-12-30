@@ -18,7 +18,7 @@ export default {
         return {}
       }
     },
-    message: {
+    value: {
       type: String,
       default: () => ''
     }
@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     inputting (e) {
-      this.$emit('update', e.target.value)
+      this.$emit('input', e.target.value)
     }
   },
   mounted () {

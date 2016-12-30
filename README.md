@@ -34,7 +34,7 @@ export default {
 Use `props` to pass the **options object** to `vue-flatpickr`. The options are same to the [official document](https://chmln.github.io/flatpickr/#options). And you could pass a default message to the instance by the props **message**. Here is an example below:
 ```
 <!-- template -->
-<Flatpickr :message='msg' :options='options' />
+<Flatpickr :value='msg' :options='options' />
 
 <!-- script -->
 data () {
@@ -48,10 +48,10 @@ data () {
 ```
 
 ## Data binding
-The  `<Flatpickr />` tag could be use as a normal `<input>` tag, your root component could use `v-on:update='your_methods'` to receive the data comes from `<Flatpickr />`.
+The  `<Flatpickr />` tag could be use as a normal `<input>` tag, your root component could use `v-on:input='your_methods'` to receive the data comes from `<Flatpickr />`.
 ```
 <!-- template -->
-<Flatpickr @update='update'/>
+<Flatpickr @input='update'/>
 
 <!-- script -->
 data () {
@@ -62,6 +62,19 @@ data () {
 methods: {
     update (val) {
       this.msg = val
+    }
+  }
+```
+
+Using v-model on `<Flatpickr />` tag as a short-hand
+```
+<!-- template -->
+<Flatpickr v-model='myDate'/>
+
+<!-- script -->
+data () {
+    return {
+      myDate: ''
     }
   }
 ```
