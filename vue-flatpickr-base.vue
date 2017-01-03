@@ -1,12 +1,12 @@
 <template>
-<input type="text" :value='message' @change='inputting' @input='inputting'>
+<input type="text" :value='value' @change='inputting' @input='inputting'>
 </template>
 
 <script>
 import Flatpickr from './assets/flatpickr'
 
 export default {
-  data () {
+  data() {
     return {
       fp: null
     }
@@ -18,28 +18,28 @@ export default {
         return {}
       }
     },
-    message: {
+    value: {
       type: String,
       default: () => ''
     }
   },
   watch: {
-    options (opt) {
+    options(opt) {
       for (let o in opt) {
         this.fp.set(o, opt[o])
       }
     }
   },
   methods: {
-    inputting (e) {
-      this.$emit('update', e.target.value)
+    inputting(e) {
+      this.$emit('input', e.target.value)
     }
   },
-  mounted () {
+  mounted() {
     this.fp = new Flatpickr(this.$el, this.options)
     this.$emit('FlatpickrRef', this.fp)
   },
-  destroyed () {
+  destroyed() {
     this.fp.destroy()
   }
 }
