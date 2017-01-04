@@ -36,7 +36,7 @@ var webpackConfig = merge(baseWebpackConfig, {
   },
   plugins: [
     new CopyWebpackPlugin([
-      { from: './src/theme', to: './theme' }
+      { from: './src/theme', to: '../theme' }
     ]),
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({

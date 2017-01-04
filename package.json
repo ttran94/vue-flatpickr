@@ -1,6 +1,6 @@
 {
   "name": "vue-flatpickr",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Flatpickr for VueJS",
   "main": "dist/index.js",
   "scripts": {
@@ -72,5 +72,9 @@
   "bugs": {
     "url": "https://github.com/jrainlau/vue-flatpickr/issues"
   },
-  "homepage": "https://github.com/jrainlau/vue-flatpickr#readme"
+  "homepage": "https://github.com/jrainlau/vue-flatpickr#readme",
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  }
 }
