@@ -1,6 +1,6 @@
 {
   "name": "vue-flatpickr",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Flatpickr for VueJS",
   "main": "dist/index.js",
   "scripts": {
