@@ -1,6 +1,6 @@
 {
   "name": "vue-flatpickr",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "Flatpickr for VueJS",
   "main": "dist/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "flatpickr": "^2.2.5"
+    "flatpickr": "^2.3.0-3"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
