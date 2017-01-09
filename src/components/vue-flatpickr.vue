@@ -26,6 +26,9 @@ export default {
     }
   },
   watch: {
+    value (val) {
+      this.fp.setDate(val)
+    },
     options (opt, oldOpt) {
       for (let o in opt) {
         if (opt[o] !== oldOpt[o]) {
