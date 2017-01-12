@@ -8,6 +8,7 @@
     <p>
       Read more in <a href="https://chmln.github.io/flatpickr/" target="_blank">Officail Document</a>
     </p>
+  </div>
 </template>
 
 <script>
@@ -17,7 +18,9 @@ export default {
   data () {
     return {
       dateStr: 'YYYY-MM-DD',
-      fpOptions: {}
+      fpOptions: {
+        enableTime: true
+      }
     }
   },
   components: {

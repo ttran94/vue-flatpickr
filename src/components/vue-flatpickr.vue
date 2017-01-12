@@ -25,15 +25,19 @@ export default {
       fp: null
     }
   },
+  computed: {
+    fpOptions () {
+      return JSON.stringify(this.options)
+    }
+  },
   watch: {
     value (val) {
       this.fp.setDate(val)
     },
-    options (opt, oldOpt) {
-      for (let o in opt) {
-        if (opt[o] !== oldOpt[o]) {
-          this.fp.set(o, opt[o])
-        }
+    fpOptions (newOpt) {
+      const option = JSON.parse(newOpt)
+      for (let o in option) {
+        this.fp.set(o, option[o])
       }
     }
   },
