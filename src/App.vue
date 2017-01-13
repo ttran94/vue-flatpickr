@@ -19,7 +19,7 @@ export default {
     return {
       dateStr: 'YYYY-MM-DD',
       fpOptions: {
-        enableTime: true
+        mode: 'range'
       }
     }
   },
