@@ -31,9 +31,6 @@ export default {
     }
   },
   watch: {
-    value (val) {
-      this.fp.setDate(val)
-    },
     fpOptions (newOpt) {
       const option = JSON.parse(newOpt)
       for (let o in option) {
@@ -51,7 +48,6 @@ export default {
   methods: {
     onInput (e) {
       this.$emit('input', e.target.value)
-      this.$destroy()
     }
   }
 }
