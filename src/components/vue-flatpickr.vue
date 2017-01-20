@@ -39,7 +39,16 @@ export default {
     }
   },
   mounted () {
-    this.fp = new Flatpickr(this.$el, this.options)
+    const self = this
+    const origOnValUpdate = this.options.onValueUpdate
+    this.fp = new Flatpickr(this.$el, Object.assign(this.options, {
+      onValueUpdate () {
+        self.onInput(self.$el.value)
+        if (typeof origOnValUpdate === 'function') {
+          origOnValUpdate()
+        }
+      }
+    }))
     this.$emit('FlatpickrRef', this.fp)
   },
   destroyed () {
@@ -47,7 +56,7 @@ export default {
   },
   methods: {
     onInput (e) {
-      this.$emit('input', e.target.value)
+      typeof e === 'string' ? this.$emit('input', e) : this.$emit('input', e.target.value)
     }
   }
 }

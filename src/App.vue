@@ -19,8 +19,9 @@ export default {
     return {
       dateStr: 'YYYY-MM-DD',
       fpOptions: {
-        mode: 'range',
-        allowInput: true
+        allowInput: true,
+        enableTime: true,
+        time_24hr: true
       }
     }
   },
