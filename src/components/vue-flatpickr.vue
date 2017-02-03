@@ -13,7 +13,7 @@ export default {
     },
     options: {
       type: Object,
-      default: () => {}
+      default: () => {return {}}
     },
     value: {
       type: String,
