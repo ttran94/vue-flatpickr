@@ -12,7 +12,7 @@ npm install vue-flatpickr --save
 
 ## Usage
 Enter your `main.js` file which inits the `VueJS`:
-```
+```javascript
 import Vue from 'vue'
 import App from './App.vue'
 import VueFlatpickr from 'vue-flatpickr'
@@ -26,19 +26,19 @@ new Vue({
 })
 ```
 then you can use `Vue-Flatpickr` directly in your `*.vue` file:
-```
+```vue
 <Flatpickr />
 ```
 
 ## Options
 Use `props` to pass an option object to `Vue-Flatpickr`:
-```
+```vue
 <!-- template -->
 <Flatpickr :options="fpOptions" />
 ```
 
-```
-<!-- script -->
+```javascript
+// script
 data () {
   return {
     fpOptions: {}
@@ -49,13 +49,13 @@ data () {
 
 ## Data binding
 `Vue-Flatpickr` supports `v-model` for data binding:
-```
+```vue
 <!-- template -->
 <Flatpickr v-model="dateStr" />
 ```
 
-```
-<!-- script -->
+```javascript
+// script
 data () {
   return {
     dateStr: ''
@@ -65,7 +65,7 @@ data () {
 
 ## Themes
 `Vue-Flatpickr` supports all the offical themes. You should import the theme you like from `vue-flatpickr/theme` after you've imported the `VueFlatpickr`.
-```
+```javascript
 import VueFlatpickr from 'vue-flatpickr'
 import 'vue-flatpickr/theme/airbnb.css'
 ```
@@ -85,7 +85,7 @@ Themes you could use:
 
 - Run dev
 
-```
+```zsh
 git clone https://github.com/jrainlau/vue-flatpickr.git
 
 cd vue-flatpickr && npm install
@@ -95,14 +95,14 @@ npm run dev
 
 - Run build-demo
 
-```
+```zsh
 npm run build-demo
 ```
 then checkout the `/dist` folder for demo.
 
 - Run build
 
-```
+```zsh
 npm run build
 ```
 then checkout the `/dist` folder for bundle.
