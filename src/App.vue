@@ -21,7 +21,6 @@ export default {
       fpOptions: {
         allowInput: true,
         enableTime: true,
-        time_24hr: true
       }
     }
   },
