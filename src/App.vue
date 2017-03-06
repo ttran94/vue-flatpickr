@@ -20,7 +20,7 @@ export default {
       dateStr: 'YYYY-MM-DD',
       fpOptions: {
         allowInput: true,
-        enableTime: true,
+        enableTime: true
       }
     }
   },

@@ -1,5 +1,5 @@
 <template>
-  <input type="text" :placeholder="placeholder" :value="value" @input="onInput">
+  <input type="text" :class="inputClass" :placeholder="placeholder" :value="value" @input="onInput">
 </template>
 
 <script>
@@ -7,13 +7,16 @@ import Flatpickr from 'flatpickr'
 
 export default {
   props: {
+    inputClass: {
+      type: String
+    },
     placeholder: {
       type: String,
       default: ''
     },
     options: {
       type: Object,
-      default: () => {return {}}
+      default: () => { return {} }
     },
     value: {
       type: String,
