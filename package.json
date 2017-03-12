@@ -10,7 +10,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "flatpickr": "^2.3.0-3"
+    "flatpickr": "2.4.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
